@@ -2,7 +2,6 @@ import argparse
 import subprocess
 from pathlib import Path
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -58,12 +57,17 @@ if __name__ == "__main__":
         # initialize white/black sites
         cmd = f"python3 analysis/filesets/build_sites.py --year {args.year}"
         subprocess.run(cmd, shell=True)
-    
+
     # keep container Python isolated from host user-site packages (~/.local),
     # otherwise dask/distributed versions can be mixed
     samples_str = " ".join(args.samples) if args.samples else ""
     cmd = (
-        f"singularity exec --env PYTHONNOUSERSITE=1 -B /afs -B /cvmfs {args.image} "
+        f"singularity exec "
+        f"--env PYTHONNOUSERSITE=1 "
+        f"-B /afs "
+        f"-B /cvmfs "
+        f"-B analysis/filesets/rucio_utils.py:/usr/local/lib/python3.10/site-packages/coffea/dataset_tools/rucio_utils.py "
+        f"{args.image} "
         f"python3 analysis/filesets/build_filesets.py --year {args.year} --samples {samples_str}"
     )
     subprocess.run(cmd, shell=True)
