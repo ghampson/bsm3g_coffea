@@ -10,10 +10,7 @@ import pandas as pd
 from pathlib import Path
 from collections import defaultdict
 from coffea.util import save, load
-try:
-    from coffea.processor import accumulate
-except ImportError:
-    from coffea import accumulate
+from coffea.processor import accumulate
 from analysis.utils import make_output_directory
 from analysis.filesets.utils import get_dataset_config, get_process_maps
 from analysis.workflows.config import WorkflowConfigBuilder
@@ -230,14 +227,9 @@ if __name__ == "__main__":
                 columns_to_drop += signals
 
             if not args.blind:
-                #columns_to_drop += ["Data"]
-                if "data" in workflow_config.datasets:
-                    data_keys = [k for k in workflow_config.datasets["data"]]
-                    data_processes = [key_process_map[key] for key in data_keys]
-                    columns_to_drop += data_processes
+                columns_to_drop += ["Data"]
 
-            #total_background = cutflow_df.drop(columns=columns_to_drop).sum(axis=1)
-            total_background = cutflow_df.drop(columns=columns_to_drop, errors="ignore").sum(axis=1)
+            total_background = cutflow_df.drop(columns=columns_to_drop).sum(axis=1)
             cutflow_df["Total Background"] = total_background
 
             cutflow_index = event_selection["categories"][category]
