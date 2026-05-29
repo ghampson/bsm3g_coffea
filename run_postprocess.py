@@ -10,7 +10,10 @@ import pandas as pd
 from pathlib import Path
 from collections import defaultdict
 from coffea.util import save, load
-from coffea.processor import accumulate
+try:
+    from coffea.processor import accumulate
+except ImportError:
+    from coffea import accumulate
 from analysis.utils import make_output_directory
 from analysis.filesets.utils import get_dataset_config, get_process_maps
 from analysis.workflows.config import WorkflowConfigBuilder
@@ -227,12 +230,18 @@ if __name__ == "__main__":
                 columns_to_drop += signals
 
             if not args.blind:
-                columns_to_drop += ["Data"]
+                #columns_to_drop += ["Data"]
+                if "data" in workflow_config.datasets:
+                    data_keys = [k for k in workflow_config.datasets["data"]]
+                    data_processes = [key_process_map[key] for key in data_keys]
+                    columns_to_drop += data_processes
 
-            total_background = cutflow_df.drop(columns=columns_to_drop).sum(axis=1)
+            #total_background = cutflow_df.drop(columns=columns_to_drop).sum(axis=1)
+            total_background = cutflow_df.drop(columns=columns_to_drop, errors="ignore").sum(axis=1)
             cutflow_df["Total Background"] = total_background
 
             cutflow_index = event_selection["categories"][category]
+            cutflow_index = [i for i in cutflow_index if i in cutflow_df.index] #added line of code, this rebuilds the cutflow but keeps items that exist in the Dataframe
             cutflow_df = cutflow_df.loc[cutflow_index]
 
             if not args.blind:

@@ -1,8 +1,9 @@
 datasets:
   data: 
-    - electron
+   - electron
   mc:
     - dy_inclusive
+    - dy_ht
     - singletop
     - tt
     - wjets_ht
@@ -66,6 +67,8 @@ event_selection:
     tau_veto: ak.num(objects['taus']) == 0
     leading_electron_pt: ak.firsts(objects['electrons'].pt) > 38
     subleading_electron_pt: ak.pad_none(objects['electrons'], target=2)[:, 1].pt > 20
+    dy_stitching: get_stitching_mask(events, dataset, 'DYJetsToLL_inclusive',70)
+    w_stitching: get_stitching_mask(events, dataset, 'WJetsToLNu_inclusive', 100)
   categories:
     base:
       - goodvertex
@@ -78,6 +81,8 @@ event_selection:
       - one_dielectron
       - muon_veto
       - tau_veto
+      - dy_stitching 
+      - w_stitching 
 corrections:
   objects:
     - jets
@@ -94,10 +99,12 @@ corrections:
     lhepdfWeight: false
     lhescaleWeight: false
     partonshowerWeight: true
+    ISRWeight:  
     electron:
       - id: wp80iso
       - reco: true
       - trigger: true
+      
 histogram_config:
   flow: true
   add_weight: true
