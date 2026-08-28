@@ -99,11 +99,11 @@ corrections:
     lhepdfWeight: false
     lhescaleWeight: false
     partonshowerWeight: true
-    ISRWeight:  
-      enabled: false
-      source: ztoee    # loads analysis/data/{year}_ztoee_isr_weight.json.gz
-      fit: false
-      one_dim: false
+    ISRWeight: true 
+     # enabled: true
+     # source: ztoee    # loads analysis/data/{year}_ztoee_isr_weight.json.gz
+     # fit: false
+     # one_dim: false
     electron:
       - id: wp80iso
       - reco: true
