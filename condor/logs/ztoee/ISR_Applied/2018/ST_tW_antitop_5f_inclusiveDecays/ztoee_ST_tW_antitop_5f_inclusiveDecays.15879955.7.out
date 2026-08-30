@@ -1,0 +1,19 @@
+subject   : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=eghampso/CN=874293/CN=Edmund Ghampson/CN=411894706
+issuer    : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=eghampso/CN=874293/CN=Edmund Ghampson
+identity  : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=eghampso/CN=874293/CN=Edmund Ghampson
+type      : RFC compliant proxy
+strength  : 2048 bits
+path      : /afs/cern.ch/user/e/eghampso/private/x509up_u167940
+timeleft  : 0:00:00
+key usage : Digital Signature, Key Encipherment
+=== VO cms extension information ===
+VO        : cms
+subject   : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=eghampso/CN=874293/CN=Edmund Ghampson
+issuer    : /DC=ch/DC=cern/OU=computers/CN=cms-auth.cern.ch
+attribute : /cms/Role=NULL/Capability=NULL
+attribute : /cms/uscms/Role=NULL/Capability=NULL
+timeleft  : 0:00:00
+uri       : voms-cms-auth.cern.ch:15000
+--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/ST_tW_antitop_5f_inclusiveDecays --output_format coffea --dataset ST_tW_antitop_5f_inclusiveDecays_8 --partition_json /srv/partition_fileset.json
+  Preprocessing  11% ━━                   1/9 [ 0:00:00 < -:--:-- | ?   file/s ]
+Merging (local)   0% ━━━━━━━━━━━━━━━━━━━━ 0/0 [ 0:00:00 < -:--:-- | ? merges/s ]

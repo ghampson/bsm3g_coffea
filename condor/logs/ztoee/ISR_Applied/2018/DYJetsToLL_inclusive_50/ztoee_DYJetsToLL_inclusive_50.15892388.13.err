@@ -1,0 +1,66 @@
++ JOBID=21
++ BASEDIR=/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ X509PATH=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ export XRD_NETWORKSTACK=IPv4
++ XRD_NETWORKSTACK=IPv4
++ export XRD_RUNFORKHANDLER=1
++ XRD_RUNFORKHANDLER=1
++ export X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ voms-proxy-info -all -file /afs/cern.ch/user/e/eghampso/private/x509up_u167940
+++ pwd
++ WORKDIR=/srv
++ declare -A ARGS
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''workflow'\''])'
++ ARGS[$key]=ztoee
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''year'\''])'
++ ARGS[$key]=2018
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_path'\''])'
++ ARGS[$key]=/eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_inclusive_50
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_format'\''])'
++ ARGS[$key]=coffea
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''dataset'\''])'
++ ARGS[$key]=DYJetsToLL_inclusive_50
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_inclusive_50 --output_format coffea --dataset DYJetsToLL_inclusive_50_21'
++ python3 -c 'import json; json.dump(json.load(open('\''/srv/partitions.json'\''))['\''21'\''], open('\''/srv/partition_fileset.json'\'', '\''w'\''), indent=4)'
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_inclusive_50 --output_format coffea --dataset DYJetsToLL_inclusive_50_21 --partition_json /srv/partition_fileset.json'
++ echo --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_inclusive_50 --output_format coffea --dataset DYJetsToLL_inclusive_50_21 --partition_json /srv/partition_fileset.json
++ cd /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ python3 submit.py --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_inclusive_50 --output_format coffea --dataset DYJetsToLL_inclusive_50_21 --partition_json /srv/partition_fileset.json
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)

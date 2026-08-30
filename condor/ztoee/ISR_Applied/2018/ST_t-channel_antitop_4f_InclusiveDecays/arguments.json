@@ -1,0 +1,12 @@
+{
+    "workflow": "ztoee",
+    "year": "2018",
+    "dataset": "ST_t-channel_antitop_4f_InclusiveDecays",
+    "nfiles": 10,
+    "eos": true,
+    "submit": true,
+    "output_format": "coffea",
+    "label": "ISR_Applied",
+    "memory": "8000",
+    "output_path": "/eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/ST_t-channel_antitop_4f_InclusiveDecays"
+}

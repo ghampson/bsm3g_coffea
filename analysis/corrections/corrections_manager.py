@@ -172,6 +172,7 @@ def weight_manager(
                     year=year,
                     variation=variation,
                     dataset=dataset,
+                    workflow=workflow,
                     fit=False,
                     one_dim=False,
                 )
@@ -184,6 +185,8 @@ def weight_manager(
                         weights=weights_container,
                         year=year,
                         variation=variation,
+			            #dataset=dataset,        #Use the dataset
+			            #workflow="ztomumu"      #<- uses the ztomumu derived SF
                     )
                     if "id" in weights_config["electron"]:
                         if weights_config["electron"]["id"]:

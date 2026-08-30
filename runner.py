@@ -69,7 +69,7 @@ if __name__ == "__main__":
         "-m",
         "--memory",
         type=str,
-        default="2000",
+        default="8000",
         help="Requested memory (in MB) for the condor job",
     )
     args = parser.parse_args()

@@ -1,0 +1,133 @@
++ JOBID=2
++ BASEDIR=/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ X509PATH=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ export XRD_NETWORKSTACK=IPv4
++ XRD_NETWORKSTACK=IPv4
++ export XRD_RUNFORKHANDLER=1
++ XRD_RUNFORKHANDLER=1
++ export X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ voms-proxy-info -all -file /afs/cern.ch/user/e/eghampso/private/x509up_u167940
+++ pwd
++ WORKDIR=/srv
++ declare -A ARGS
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''workflow'\''])'
++ ARGS[$key]=ztoee
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''year'\''])'
++ ARGS[$key]=2018
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_path'\''])'
++ ARGS[$key]=/eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_M-50_HT-100to200
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_format'\''])'
++ ARGS[$key]=coffea
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''dataset'\''])'
++ ARGS[$key]=DYJetsToLL_M-50_HT-100to200
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_M-50_HT-100to200 --output_format coffea --dataset DYJetsToLL_M-50_HT-100to200_2'
++ python3 -c 'import json; json.dump(json.load(open('\''/srv/partitions.json'\''))['\''2'\''], open('\''/srv/partition_fileset.json'\'', '\''w'\''), indent=4)'
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_M-50_HT-100to200 --output_format coffea --dataset DYJetsToLL_M-50_HT-100to200_2 --partition_json /srv/partition_fileset.json'
++ echo --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_M-50_HT-100to200 --output_format coffea --dataset DYJetsToLL_M-50_HT-100to200_2 --partition_json /srv/partition_fileset.json
++ cd /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ python3 submit.py --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/DYJetsToLL_M-50_HT-100to200 --output_format coffea --dataset DYJetsToLL_M-50_HT-100to200_2 --partition_json /srv/partition_fileset.json
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1839, in _work_function
+    out = processor_instance.process(events)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/analysis/processors/base.py", line 132, in process
+    return processor.accumulate(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/accumulator.py", line 95, in accumulate
+    accum = next(gen)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/accumulator.py", line 92, in <genexpr>
+    gen = (x for x in items if x is not None)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/analysis/processors/base.py", line 133, in <genexpr>
+    self.process_shift(update(events, collections), name)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/analysis/processors/base.py", line 194, in process_shift
+    weights_container = weight_manager(
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/analysis/corrections/corrections_manager.py", line 183, in weight_manager
+    electron_corrector = ElectronCorrector(
+TypeError: ElectronCorrector.__init__() got an unexpected keyword argument 'dataset'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/concurrent/futures/process.py", line 246, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 221, in __call__
+    out = self.function(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1552, in automatic_retries
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1522, in automatic_retries
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1841, in _work_function
+    raise Exception(f"Failed processing file: {item!r}") from e
+Exception: Failed processing file: WorkItem(dataset='DYJetsToLL_M-50_HT-100to200_2', filename='root://cmsdcadisk.fnal.gov//dcache/uscmsdisk/store/mc/RunIISummer20UL18NanoAODv9/DYJetsToLL_M-50_HT-100to200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/280000/C5FC268A-8CB9-CD4B-A2B2-6BA6C3682C54.root', treename='Events', entrystart=99794, entrystop=199588, fileuuid=b'\xf0\t\xb3\x8e\xf1b\x11\xeb\x87\x06\xb9\x1b\x1e\n\xbe\xef', usermeta={})
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 972, in _processwith
+    merged = _watcher(FH, self, reducer, pool)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 402, in _watcher
+    batch = FH.fetch(len(FH.completed))
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 286, in fetch
+    raise bad_futures[0].exception()
+Exception: Failed processing file: WorkItem(dataset='DYJetsToLL_M-50_HT-100to200_2', filename='root://cmsdcadisk.fnal.gov//dcache/uscmsdisk/store/mc/RunIISummer20UL18NanoAODv9/DYJetsToLL_M-50_HT-100to200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/280000/C5FC268A-8CB9-CD4B-A2B2-6BA6C3682C54.root', treename='Events', entrystart=99794, entrystop=199588, fileuuid=b'\xf0\t\xb3\x8e\xf1b\x11\xeb\x87\x06\xb9\x1b\x1e\n\xbe\xef', usermeta={})
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/submit.py", line 84, in <module>
+    main(args)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/submit.py", line 14, in main
+    out = processor.run_uproot_job(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/__init__.py", line 105, in _run_x_job
+    return run(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1885, in __call__
+    wrapped_out = self.run(fileset, processor_instance, treename)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 2035, in run
+    wrapped_out, e = executor(chunks, closure, None)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1003, in __call__
+    return _processwith(pool=poolinstance, mergepool=mergepoolinstance)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 987, in _processwith
+    raise e from None
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 972, in _processwith
+    merged = _watcher(FH, self, reducer, pool)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 402, in _watcher
+    batch = FH.fetch(len(FH.completed))
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 286, in fetch
+    raise bad_futures[0].exception()
+Exception: Failed processing file: WorkItem(dataset='DYJetsToLL_M-50_HT-100to200_2', filename='root://cmsdcadisk.fnal.gov//dcache/uscmsdisk/store/mc/RunIISummer20UL18NanoAODv9/DYJetsToLL_M-50_HT-100to200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/280000/C5FC268A-8CB9-CD4B-A2B2-6BA6C3682C54.root', treename='Events', entrystart=99794, entrystop=199588, fileuuid=b'\xf0\t\xb3\x8e\xf1b\x11\xeb\x87\x06\xb9\x1b\x1e\n\xbe\xef', usermeta={})

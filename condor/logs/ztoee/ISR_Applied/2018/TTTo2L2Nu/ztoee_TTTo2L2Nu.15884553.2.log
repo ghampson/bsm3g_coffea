@@ -1,0 +1,45 @@
+000 (15884553.002.000) 08/28 06:16:10 Job submitted from host: <137.138.120.116:9618?addrs=137.138.120.116-9618+[2001-1458-d00-16--17b]-9618&alias=bigbird12.cern.ch&noUDP&sock=schedd_5465_1d29>
+...
+040 (15884553.002.000) 08/28 06:20:45 Started transferring input files
+	Transferring to host: <188.185.213.149:9618?addrs=188.185.213.149-9618+[2001-1458-303-1b--100-11]-9618&alias=b9p28p9569.cern.ch&noUDP&sock=slot1_12_5423_be76_55248>
+...
+040 (15884553.002.000) 08/28 06:20:45 Finished transferring input files
+...
+001 (15884553.002.000) 08/28 06:20:46 Job executing on host: <188.185.213.149:9618?addrs=188.185.213.149-9618+[2001-1458-303-1b--100-11]-9618&alias=b9p28p9569.cern.ch&noUDP&sock=startd_4472_ff9e>
+	SlotName: slot1_12@b9p28p9569.cern.ch
+	CondorScratchDir = "/pool/condor/dir_3651824"
+	Cpus = 3
+	Disk = 3669
+	GPUs = 0
+	Memory = 9000
+...
+006 (15884553.002.000) 08/28 06:20:55 Image size of job updated: 115752
+	114  -  MemoryUsage of job (MB)
+	115752  -  ResidentSetSize of job (KB)
+...
+006 (15884553.002.000) 08/28 06:25:56 Image size of job updated: 4934400
+	4748  -  MemoryUsage of job (MB)
+	4861748  -  ResidentSetSize of job (KB)
+...
+040 (15884553.002.000) 08/28 06:27:45 Started transferring output files
+...
+040 (15884553.002.000) 08/28 06:27:45 Finished transferring output files
+...
+005 (15884553.002.000) 08/28 06:27:46 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:15:59, Sys 0 00:00:41  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:15:59, Sys 0 00:00:41  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	14600  -  Run Bytes Sent By Job
+	32024  -  Run Bytes Received By Job
+	14600  -  Total Bytes Sent By Job
+	32024  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        3         3 
+	   Disk (KB)            :       72       35      3669 
+	   GPUs                 :                           0 
+	   Memory (MB)          :     4748     9000      9000 
+	   TimeExecute (s)      :      419                    
+	   TimeSlotBusy (s)     :      421                    
+...

@@ -1,0 +1,101 @@
++ JOBID=12
++ BASEDIR=/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ X509PATH=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ export XRD_NETWORKSTACK=IPv4
++ XRD_NETWORKSTACK=IPv4
++ export XRD_RUNFORKHANDLER=1
++ XRD_RUNFORKHANDLER=1
++ export X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ voms-proxy-info -all -file /afs/cern.ch/user/e/eghampso/private/x509up_u167940
+++ pwd
++ WORKDIR=/srv
++ declare -A ARGS
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''workflow'\''])'
++ ARGS[$key]=ztoee
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''year'\''])'
++ ARGS[$key]=2018
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_path'\''])'
++ ARGS[$key]=/eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/ST_t-channel_antitop_4f_InclusiveDecays
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_format'\''])'
++ ARGS[$key]=coffea
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''dataset'\''])'
++ ARGS[$key]=ST_t-channel_antitop_4f_InclusiveDecays
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/ST_t-channel_antitop_4f_InclusiveDecays --output_format coffea --dataset ST_t-channel_antitop_4f_InclusiveDecays_12'
++ python3 -c 'import json; json.dump(json.load(open('\''/srv/partitions.json'\''))['\''12'\''], open('\''/srv/partition_fileset.json'\'', '\''w'\''), indent=4)'
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/ST_t-channel_antitop_4f_InclusiveDecays --output_format coffea --dataset ST_t-channel_antitop_4f_InclusiveDecays_12 --partition_json /srv/partition_fileset.json'
++ echo --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/ST_t-channel_antitop_4f_InclusiveDecays --output_format coffea --dataset ST_t-channel_antitop_4f_InclusiveDecays_12 --partition_json /srv/partition_fileset.json
++ cd /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ python3 submit.py --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/ST_t-channel_antitop_4f_InclusiveDecays --output_format coffea --dataset ST_t-channel_antitop_4f_InclusiveDecays_12 --partition_json /srv/partition_fileset.json
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/concurrent/futures/process.py", line 246, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1552, in automatic_retries
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1522, in automatic_retries
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1602, in metadata_fetcher
+    with uproot.open({item.filename: None}, timeout=xrootdtimeout) as file:
+  File "/usr/local/lib/python3.10/site-packages/uproot/reading.py", line 141, in open
+    file = ReadOnlyFile(
+  File "/usr/local/lib/python3.10/site-packages/uproot/reading.py", line 580, in __init__
+    self._source = Source(
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 272, in __init__
+    self._open()
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 275, in _open
+    self._resource = XRootDResource(self._file_path, self._timeout)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 83, in __init__
+    self._open()
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 92, in _open
+    self._xrd_error(status)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 118, in _xrd_error
+    raise OSError(
+OSError: XRootD error: [FATAL] Auth failed: No protocols left to try
+in file root://xrootd01.jinr-t1.ru:1094//pnfs/jinr-t1.ru/data/cms/store/mc/RunIISummer20UL18NanoAODv9/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/80000/94537F81-4883-1A4C-9DAC-7D5C40689C38.root
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 972, in _processwith
+    merged = _watcher(FH, self, reducer, pool)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 402, in _watcher
+    batch = FH.fetch(len(FH.completed))
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 286, in fetch
+    raise bad_futures[0].exception()
+OSError: XRootD error: [FATAL] Auth failed: No protocols left to try
+in file root://xrootd01.jinr-t1.ru:1094//pnfs/jinr-t1.ru/data/cms/store/mc/RunIISummer20UL18NanoAODv9/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/80000/94537F81-4883-1A4C-9DAC-7D5C40689C38.root
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/submit.py", line 84, in <module>
+    main(args)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/submit.py", line 14, in main
+    out = processor.run_uproot_job(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/__init__.py", line 105, in _run_x_job
+    return run(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1885, in __call__
+    wrapped_out = self.run(fileset, processor_instance, treename)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1967, in run
+    chunks = self.preprocess(fileset, treename)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1919, in preprocess
+    self._preprocess_fileset(fileset)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1646, in _preprocess_fileset
+    out, _ = pre_executor(to_get, closure, out)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1003, in __call__
+    return _processwith(pool=poolinstance, mergepool=mergepoolinstance)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 987, in _processwith
+    raise e from None
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 972, in _processwith
+    merged = _watcher(FH, self, reducer, pool)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 402, in _watcher
+    batch = FH.fetch(len(FH.completed))
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 286, in fetch
+    raise bad_futures[0].exception()
+OSError: XRootD error: [FATAL] Auth failed: No protocols left to try
+in file root://xrootd01.jinr-t1.ru:1094//pnfs/jinr-t1.ru/data/cms/store/mc/RunIISummer20UL18NanoAODv9/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/80000/94537F81-4883-1A4C-9DAC-7D5C40689C38.root

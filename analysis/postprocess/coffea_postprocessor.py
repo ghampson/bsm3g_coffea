@@ -157,8 +157,26 @@ def get_results_report(processed_histograms, workflow_config, category, columns_
     mcstat_err = {}
     bin_error_up = {}
     bin_error_down = {}
-    for process in processed_histograms:
+        #>>> DIAGONSTIC CHECK
+	print(f"[DEBUG] checking process={process!r}")
+        proc_data = processed_histograms.get(process)
+        if proc_data is None:
+            print(f"[DEBUG] {process}: processed_histograms[process] is None -- skipping")
+            continue
+        if kin not in proc_data:
+            print(f"[DEBUG] {process}: '{kin}' not in histogram dict (keys={list(proc_data.keys())}) -- skipping")
+            continue
+
         aux_hist = processed_histograms[process][kin]
+
+        if "variation" not in aux_hist.axes.name:
+            print(f"[DEBUG] {process}: no 'variation' axis at all!")
+            continue
+        cats = list(aux_hist.axes["variation"])
+        if "nominal" not in cats:
+            print(f"[DEBUG] {process}: variation categories = {cats}  <-- MISSING 'nominal'")
+            continue
+	#>> END OF CHECK
         nominal_selector = {"variation": "nominal"}
         if "category" in aux_hist.axes.name:
             nominal_selector["category"] = category

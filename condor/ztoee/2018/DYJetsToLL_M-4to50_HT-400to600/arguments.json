@@ -1,0 +1,12 @@
+{
+    "workflow": "ztoee",
+    "year": "2018",
+    "dataset": "DYJetsToLL_M-4to50_HT-400to600",
+    "nfiles": 10,
+    "eos": false,
+    "submit": true,
+    "output_format": "coffea",
+    "label": "",
+    "memory": "2000",
+    "output_path": "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/analysis/outputs/ztoee/2018/DYJetsToLL_M-4to50_HT-400to600"
+}

@@ -1,0 +1,21 @@
+subject   : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=eghampso/CN=874293/CN=Edmund Ghampson/CN=3095508913
+issuer    : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=eghampso/CN=874293/CN=Edmund Ghampson
+identity  : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=eghampso/CN=874293/CN=Edmund Ghampson
+type      : RFC compliant proxy
+strength  : 2048 bits
+path      : /afs/cern.ch/user/e/eghampso/private/x509up_u167940
+timeleft  : 180:55:09
+key usage : Digital Signature, Key Encipherment
+=== VO cms extension information ===
+VO        : cms
+subject   : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=eghampso/CN=874293/CN=Edmund Ghampson
+issuer    : /DC=ch/DC=cern/OU=computers/CN=cms-auth.cern.ch
+attribute : /cms/Role=NULL/Capability=NULL
+attribute : /cms/uscms/Role=NULL/Capability=NULL
+timeleft  : 180:55:09
+uri       : voms-cms-auth.cern.ch:15000
+--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied/2018/WJetsToLNu_HT-400To600 --output_format coffea --dataset WJetsToLNu_HT-400To600_1 --partition_json /srv/partition_fileset.json
+  Preprocessing 100% ━━━━━━━━━━━━━━━━━━ 9/9 [ 0:00:07 < 0:00:00 | 1.3   file/s ]
+Merging (local)  11% ━━                 1/9 [ 0:00:07 < -:--:-- | ?   merges/s ]
+     Processing  50% ━━━━━━━━╸         7/14 [ 0:01:44 < 0:01:17 | 0.1  chunk/s ]
+Merging (local)   0%                    0/6 [ 0:01:44 < -:--:-- | ?   merges/s ]

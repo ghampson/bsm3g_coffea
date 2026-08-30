@@ -1,0 +1,45 @@
+000 (15881618.003.000) 08/27 17:31:08 Job submitted from host: <137.138.120.116:9618?addrs=137.138.120.116-9618+[2001-1458-d00-16--17b]-9618&alias=bigbird12.cern.ch&noUDP&sock=schedd_5465_1d29>
+...
+040 (15881618.003.000) 08/27 17:46:30 Started transferring input files
+	Transferring to host: <188.185.209.171:9618?addrs=188.185.209.171-9618+[2001-1458-303-12--100-28]-9618&alias=b9p12p1368.cern.ch&noUDP&sock=slot1_6_6815_88ae_41003>
+...
+040 (15881618.003.000) 08/27 17:46:30 Finished transferring input files
+...
+001 (15881618.003.000) 08/27 17:46:31 Job executing on host: <188.185.209.171:9618?addrs=188.185.209.171-9618+[2001-1458-303-12--100-28]-9618&alias=b9p12p1368.cern.ch&noUDP&sock=startd_5907_4a05>
+	SlotName: slot1_6@b9p12p1368.cern.ch
+	CondorScratchDir = "/pool/condor/dir_823914"
+	Cpus = 3
+	Disk = 3691
+	GPUs = 0
+	Memory = 9000
+...
+006 (15881618.003.000) 08/27 17:46:40 Image size of job updated: 140628
+	138  -  MemoryUsage of job (MB)
+	140628  -  ResidentSetSize of job (KB)
+...
+006 (15881618.003.000) 08/27 17:46:50 Image size of job updated: 225248
+	138  -  MemoryUsage of job (MB)
+	140632  -  ResidentSetSize of job (KB)
+...
+040 (15881618.003.000) 08/27 17:46:50 Started transferring output files
+...
+040 (15881618.003.000) 08/27 17:46:50 Finished transferring output files
+...
+005 (15881618.003.000) 08/27 17:46:52 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:16, Sys 0 00:00:03  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:16, Sys 0 00:00:03  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	16812  -  Run Bytes Sent By Job
+	23632  -  Run Bytes Received By Job
+	16812  -  Total Bytes Sent By Job
+	23632  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        3         3 
+	   Disk (KB)            :       67       27      3691 
+	   GPUs                 :                           0 
+	   Memory (MB)          :      138     9000      9000 
+	   TimeExecute (s)      :       19                    
+	   TimeSlotBusy (s)     :       21                    
+...
