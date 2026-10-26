@@ -1,0 +1,15 @@
+executable            = /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/condor/submit.sh
+arguments             = $(JOBNUM) /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea /afs/cern.ch/user/e/eghampso/private/x509up_u167940
+output                = /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/condor/logs/ztoee/ISR_Applied_2/2018/SingleElectronA/ztoee_SingleElectronA.$(ClusterId).$(ProcId).out
+error                 = /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/condor/logs/ztoee/ISR_Applied_2/2018/SingleElectronA/ztoee_SingleElectronA.$(ClusterId).$(ProcId).err
+log                   = /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/condor/logs/ztoee/ISR_Applied_2/2018/SingleElectronA/ztoee_SingleElectronA.$(ClusterId).$(ProcId).log
+
+should_transfer_files = YES
+transfer_input_files  = /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/condor/ztoee/ISR_Applied_2/2018/SingleElectronA/partitions.json,/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/condor/ztoee/ISR_Applied_2/2018/SingleElectronA/jobnum.txt,/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/condor/ztoee/ISR_Applied_2/2018/SingleElectronA/arguments.json
+
+request_memory        = 8000M
+
++JobFlavour           = "longlunch"
++SingularityImage     = "/cvmfs/unpacked.cern.ch/registry.hub.docker.com/coffeateam/coffea-base-almalinux9:0.7.30-py3.10"
+
+Queue JOBNUM from /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/condor/ztoee/ISR_Applied_2/2018/SingleElectronA/jobnum.txt

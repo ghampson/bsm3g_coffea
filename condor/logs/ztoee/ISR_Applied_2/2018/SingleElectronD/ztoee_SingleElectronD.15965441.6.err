@@ -1,0 +1,186 @@
++ JOBID=7
++ BASEDIR=/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ X509PATH=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ export XRD_NETWORKSTACK=IPv4
++ XRD_NETWORKSTACK=IPv4
++ export XRD_RUNFORKHANDLER=1
++ XRD_RUNFORKHANDLER=1
++ export X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ voms-proxy-info -all -file /afs/cern.ch/user/e/eghampso/private/x509up_u167940
+++ pwd
++ WORKDIR=/srv
++ declare -A ARGS
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''workflow'\''])'
++ ARGS[$key]=ztoee
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''year'\''])'
++ ARGS[$key]=2018
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_path'\''])'
++ ARGS[$key]=/eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/SingleElectronD
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_format'\''])'
++ ARGS[$key]=coffea
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''dataset'\''])'
++ ARGS[$key]=SingleElectronD
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/SingleElectronD --output_format coffea --dataset SingleElectronD_7'
++ python3 -c 'import json; json.dump(json.load(open('\''/srv/partitions.json'\''))['\''7'\''], open('\''/srv/partition_fileset.json'\'', '\''w'\''), indent=4)'
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/SingleElectronD --output_format coffea --dataset SingleElectronD_7 --partition_json /srv/partition_fileset.json'
++ echo --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/SingleElectronD --output_format coffea --dataset SingleElectronD_7 --partition_json /srv/partition_fileset.json
++ cd /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ python3 submit.py --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/SingleElectronD --output_format coffea --dataset SingleElectronD_7 --partition_json /srv/partition_fileset.json
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1839, in _work_function
+    out = processor_instance.process(events)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/analysis/processors/base.py", line 93, in process
+    object_corrector_manager(
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/analysis/corrections/corrections_manager.py", line 53, in object_corrector_manager
+    apply_rochester_corrections_run2(events, year)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/analysis/corrections/rochester.py", line 503, in apply_rochester_corrections_run2
+    corrections = rochester.kScaleDT(
+  File "/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/rochester_lookup.py", line 100, in kScaleDT
+    return 1.0 / (M + charge * A * pt)
+  File "/usr/local/lib/python3.10/site-packages/awkward/_connect/_numpy.py", line 391, in func
+    return ufunc(self, other)
+  File "/usr/local/lib/python3.10/site-packages/awkward/highlevel.py", line 1411, in __array_ufunc__
+    return ak._connect._numpy.array_ufunc(ufunc, method, inputs, kwargs)
+  File "/usr/local/lib/python3.10/site-packages/awkward/_connect/_numpy.py", line 252, in array_ufunc
+    out = ak._util.broadcast_and_apply(
+  File "/usr/local/lib/python3.10/site-packages/awkward/_util.py", line 1172, in broadcast_and_apply
+    out = apply(broadcast_pack(inputs, isscalar), 0, user)
+  File "/usr/local/lib/python3.10/site-packages/awkward/_util.py", line 925, in apply
+    outcontent = apply(nextinputs, depth + 1, user)
+  File "/usr/local/lib/python3.10/site-packages/awkward/_util.py", line 753, in apply
+    return apply(nextinputs, depth, user)
+  File "/usr/local/lib/python3.10/site-packages/awkward/_util.py", line 1028, in apply
+    outcontent = apply(nextinputs, depth + 1, user)
+  File "/usr/local/lib/python3.10/site-packages/awkward/_util.py", line 750, in apply
+    nextinputs.append(x.array)
+  File "/usr/local/lib/python3.10/site-packages/awkward/operations/convert.py", line 4774, in _form_to_layout
+    container[key_format(form_key=fk, attribute="data", partition=partnum)]
+  File "/usr/local/lib/python3.10/site-packages/coffea/nanoevents/mapping/base.py", line 90, in __getitem__
+    stack.append(self.extract_column(handle, start, stop))
+  File "/usr/local/lib/python3.10/site-packages/coffea/nanoevents/mapping/uproot.py", line 149, in extract_column
+    return columnhandle.array(
+  File "/usr/local/lib/python3.10/site-packages/uproot/behaviors/TBranch.py", line 2208, in array
+    _ranges_or_baskets_to_arrays(
+  File "/usr/local/lib/python3.10/site-packages/uproot/behaviors/TBranch.py", line 3493, in _ranges_or_baskets_to_arrays
+    uproot.source.futures.delayed_raise(*obj)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/futures.py", line 36, in delayed_raise
+    raise exception_value.with_traceback(traceback)
+  File "/usr/local/lib/python3.10/site-packages/uproot/behaviors/TBranch.py", line 3414, in chunk_to_basket
+    basket = uproot.models.TBasket.Model_TBasket.read(
+  File "/usr/local/lib/python3.10/site-packages/uproot/model.py", line 837, in read
+    self.read_members(chunk, cursor, context, file)
+  File "/usr/local/lib/python3.10/site-packages/uproot/models/TBasket.py", line 223, in read_members
+    ) = cursor.fields(chunk, _tbasket_format1, context)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/cursor.py", line 197, in fields
+    return format.unpack(chunk.get(start, stop, self, context))
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/chunk.py", line 419, in get
+    self.wait(insist=stop)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/chunk.py", line 356, in wait
+    self._raw_data = numpy.frombuffer(self._future.result(), dtype=self._dtype)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/futures.py", line 116, in result
+    delayed_raise(*self._excinfo)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/futures.py", line 36, in delayed_raise
+    raise exception_value.with_traceback(traceback)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/futures.py", line 278, in _run
+    self._result = self._task(resource)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 218, in task
+    return partfutures[0].result()
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/futures.py", line 116, in result
+    delayed_raise(*self._excinfo)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/futures.py", line 36, in delayed_raise
+    raise exception_value.with_traceback(traceback)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 236, in callback
+    self._xrd_error(status)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 118, in _xrd_error
+    raise OSError(
+OSError: XRootD error: [ERROR] Operation expired
+in file root://xrootd-cms.infn.it:1194//store/data/Run2018D/EGamma/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v3/250000/0097B9EE-3145-934F-A25A-548B138CA576.root
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/concurrent/futures/process.py", line 246, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 221, in __call__
+    out = self.function(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1552, in automatic_retries
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1522, in automatic_retries
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1841, in _work_function
+    raise Exception(f"Failed processing file: {item!r}") from e
+Exception: Failed processing file: WorkItem(dataset='SingleElectronD_7', filename='root://xrootd-cms.infn.it:1194//store/data/Run2018D/EGamma/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v3/250000/0097B9EE-3145-934F-A25A-548B138CA576.root', treename='Events', entrystart=0, entrystop=98100, fileuuid=b'\x98\xeet\x8c\x10\xb5\x11\xec\x90\x8d\xa4{\x01\n\xbe\xef', usermeta={})
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 972, in _processwith
+    merged = _watcher(FH, self, reducer, pool)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 402, in _watcher
+    batch = FH.fetch(len(FH.completed))
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 286, in fetch
+    raise bad_futures[0].exception()
+Exception: Failed processing file: WorkItem(dataset='SingleElectronD_7', filename='root://xrootd-cms.infn.it:1194//store/data/Run2018D/EGamma/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v3/250000/0097B9EE-3145-934F-A25A-548B138CA576.root', treename='Events', entrystart=0, entrystop=98100, fileuuid=b'\x98\xeet\x8c\x10\xb5\x11\xec\x90\x8d\xa4{\x01\n\xbe\xef', usermeta={})
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/submit.py", line 84, in <module>
+    main(args)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/submit.py", line 14, in main
+    out = processor.run_uproot_job(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/__init__.py", line 105, in _run_x_job
+    return run(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1885, in __call__
+    wrapped_out = self.run(fileset, processor_instance, treename)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 2035, in run
+    wrapped_out, e = executor(chunks, closure, None)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1003, in __call__
+    return _processwith(pool=poolinstance, mergepool=mergepoolinstance)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 987, in _processwith
+    raise e from None
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 972, in _processwith
+    merged = _watcher(FH, self, reducer, pool)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 402, in _watcher
+    batch = FH.fetch(len(FH.completed))
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 286, in fetch
+    raise bad_futures[0].exception()
+Exception: Failed processing file: WorkItem(dataset='SingleElectronD_7', filename='root://xrootd-cms.infn.it:1194//store/data/Run2018D/EGamma/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v3/250000/0097B9EE-3145-934F-A25A-548B138CA576.root', treename='Events', entrystart=0, entrystop=98100, fileuuid=b'\x98\xeet\x8c\x10\xb5\x11\xec\x90\x8d\xa4{\x01\n\xbe\xef', usermeta={})

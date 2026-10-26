@@ -1,0 +1,133 @@
++ JOBID=4
++ BASEDIR=/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ X509PATH=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ export XRD_NETWORKSTACK=IPv4
++ XRD_NETWORKSTACK=IPv4
++ export XRD_RUNFORKHANDLER=1
++ XRD_RUNFORKHANDLER=1
++ export X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ X509_USER_PROXY=/afs/cern.ch/user/e/eghampso/private/x509up_u167940
++ voms-proxy-info -all -file /afs/cern.ch/user/e/eghampso/private/x509up_u167940
+++ pwd
++ WORKDIR=/srv
++ declare -A ARGS
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''workflow'\''])'
++ ARGS[$key]=ztoee
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''year'\''])'
++ ARGS[$key]=2018
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_path'\''])'
++ ARGS[$key]=/eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/TTTo2L2Nu
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''output_format'\''])'
++ ARGS[$key]=coffea
++ for key in workflow year output_path output_format dataset
+++ python3 -c 'import json; print(json.load(open('\''/srv/arguments.json'\''))['\''dataset'\''])'
++ ARGS[$key]=TTTo2L2Nu
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/TTTo2L2Nu --output_format coffea --dataset TTTo2L2Nu_4'
++ python3 -c 'import json; json.dump(json.load(open('\''/srv/partitions.json'\''))['\''4'\''], open('\''/srv/partition_fileset.json'\'', '\''w'\''), indent=4)'
++ CMD_ARGS='--workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/TTTo2L2Nu --output_format coffea --dataset TTTo2L2Nu_4 --partition_json /srv/partition_fileset.json'
++ echo --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/TTTo2L2Nu --output_format coffea --dataset TTTo2L2Nu_4 --partition_json /srv/partition_fileset.json
++ cd /afs/cern.ch/user/e/eghampso/public/bsm3g_coffea
++ python3 submit.py --workflow ztoee --year 2018 --output_path /eos/user/e/eghampso/bsm3g_coffea/outputs/ztoee/ISR_Applied_2/2018/TTTo2L2Nu --output_format coffea --dataset TTTo2L2Nu_4 --partition_json /srv/partition_fileset.json
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_electronIdx => Electron
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/nanoevents/schemas/nanoaod.py:205: RuntimeWarning: Missing cross-reference index for LowPtElectron_photonIdx => Photon
+  warnings.warn(
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:199: RuntimeWarning: overflow encountered in power
+  - ((mL - 1) * (mL / betaL) ** (-mL) / eb2L * p / N) ** (1 / (1 - mL))
+/usr/local/lib/python3.10/site-packages/coffea/lookup_tools/doublecrystalball.py:186: RuntimeWarning: overflow encountered in power
+  - ((mH - 1) * (mH / betaH) ** (-mH) / eb2H * (1 - p) / N)
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/concurrent/futures/process.py", line 246, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 221, in __call__
+    out = self.function(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1552, in automatic_retries
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1522, in automatic_retries
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1800, in _work_function
+    factory = NanoEventsFactory.from_root(
+  File "/usr/local/lib/python3.10/site-packages/coffea/nanoevents/factory.py", line 97, in from_root
+    tree = file[treepath]
+  File "/usr/local/lib/python3.10/site-packages/uproot/reading.py", line 2107, in __getitem__
+    return self.key(where).get()
+  File "/usr/local/lib/python3.10/site-packages/uproot/reading.py", line 2504, in get
+    chunk, cursor = self.get_uncompressed_chunk_cursor()
+  File "/usr/local/lib/python3.10/site-packages/uproot/reading.py", line 2556, in get_uncompressed_chunk_cursor
+    chunk = self._file.chunk(data_start, data_stop)
+  File "/usr/local/lib/python3.10/site-packages/uproot/reading.py", line 1200, in chunk
+    return self._source.chunk(start, stop)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 311, in chunk
+    data = self._resource.get(start, stop)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 169, in get
+    self._xrd_error(status)
+  File "/usr/local/lib/python3.10/site-packages/uproot/source/xrootd.py", line 118, in _xrd_error
+    raise OSError(
+OSError: XRootD error: [ERROR] Operation expired
+in file root://k8s-redir.ultralight.org:1094//store/mc/RunIISummer20UL18NanoAODv9/TTTo2L2Nu_TuneCP5CR1_13TeV-powheg-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/130000/D019BFAF-0AE6-4741-A0CB-489ADF0D4205.root
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 972, in _processwith
+    merged = _watcher(FH, self, reducer, pool)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 402, in _watcher
+    batch = FH.fetch(len(FH.completed))
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 286, in fetch
+    raise bad_futures[0].exception()
+OSError: XRootD error: [ERROR] Operation expired
+in file root://k8s-redir.ultralight.org:1094//store/mc/RunIISummer20UL18NanoAODv9/TTTo2L2Nu_TuneCP5CR1_13TeV-powheg-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/130000/D019BFAF-0AE6-4741-A0CB-489ADF0D4205.root
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/submit.py", line 84, in <module>
+    main(args)
+  File "/afs/cern.ch/user/e/eghampso/public/bsm3g_coffea/submit.py", line 14, in main
+    out = processor.run_uproot_job(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/__init__.py", line 105, in _run_x_job
+    return run(
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1885, in __call__
+    wrapped_out = self.run(fileset, processor_instance, treename)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 2035, in run
+    wrapped_out, e = executor(chunks, closure, None)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 1003, in __call__
+    return _processwith(pool=poolinstance, mergepool=mergepoolinstance)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 987, in _processwith
+    raise e from None
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 972, in _processwith
+    merged = _watcher(FH, self, reducer, pool)
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 402, in _watcher
+    batch = FH.fetch(len(FH.completed))
+  File "/usr/local/lib/python3.10/site-packages/coffea/processor/executor.py", line 286, in fetch
+    raise bad_futures[0].exception()
+OSError: XRootD error: [ERROR] Operation expired
+in file root://k8s-redir.ultralight.org:1094//store/mc/RunIISummer20UL18NanoAODv9/TTTo2L2Nu_TuneCP5CR1_13TeV-powheg-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/130000/D019BFAF-0AE6-4741-A0CB-489ADF0D4205.root
