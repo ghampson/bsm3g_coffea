@@ -1,3 +1,4 @@
+
 import copy
 import correctionlib
 import awkward as ak
@@ -16,9 +17,9 @@ def add_isr_weight(events, weights, year, variation, dataset, workflow, fit, one
 
         njet = ak.num(events.selected_jets)
         if one_dim:
-            in_binning = (dilepton_pt > 0.0) & (dilepton_pt < 1000.0)
+            in_binning = (dilepton_pt > 0.0)# & (dilepton_pt < 1000.0)
         else:
-            in_binning = (dilepton_pt > 0.0) & (dilepton_pt < 1000.0) & (njet > 0) & (njet < 5)
+            in_binning = (dilepton_pt > 0.0)# & (dilepton_pt < 1000.0) & (njet > 0) & (njet < 5)
 
         selected_dilepton_pt = dilepton_pt.mask[in_binning]
         selected_njet = njet.mask[in_binning]
